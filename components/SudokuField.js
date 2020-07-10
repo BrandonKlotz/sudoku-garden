@@ -2,8 +2,8 @@ const SudokuField = (props) => {
   const { field } = props;
 
   const handleChange = (e) => {
-    const value = e.target.value === "" ? null : parseInt(e.target.value, 10);
-    props.onChange(Object.assign({ value: value }, props.field));
+    const value = value === "" ? null : parseInt(e.target.value, 10);
+    props.onChange({ ...field, value: value });
   };
 
   return (
