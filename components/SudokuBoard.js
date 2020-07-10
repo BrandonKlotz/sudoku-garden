@@ -1,5 +1,5 @@
 import SudokuField from "./SudokuField";
-import Timer from "./Timer";
+// import Timer from "./Timer";
 import Result from "./Result";
 
 export default function SudokuBoard(props) {
@@ -7,7 +7,7 @@ export default function SudokuBoard(props) {
 
   return (
     <div>
-      {!sudoku.solveTime && <Timer start={sudoku.startTime} />}
+      {/* {!sudoku.solveTime && <Timer start={sudoku.startTime} />} */}
       {sudoku.solveTime && <Result sudoku={sudoku} />}
       {sudoku.rows.map((row) => (
         <div className="row" key={row.index}>

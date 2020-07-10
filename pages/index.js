@@ -1,10 +1,15 @@
-import { checkSolution, shareUrl } from "../lib/SudokuHelpers";
-import { useState } from "react";
-import { generateSudoku } from "../lib/SudokuHelpers";
+import { useState, useEffect } from "react";
 import SudokuBoard from "../components/SudokuBoard";
+import { generateSudoku } from "../lib/sudoku";
 
 export default function Home() {
-  const [sudoku, setSudoku] = useState(generateSudoku());
+  const [sudoku, setSudoku] = useState(null);
+
+  useEffect(() => {
+    if (sudoku === null) {
+      setSudoku(generateSudoku());
+    }
+  });
 
   function handleChange(e) {
     let updatedSudoku = { ...sudoku };
@@ -29,9 +34,13 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <SudokuBoard sudoku={sudoku} onChange={handleChange} />
-      <button onClick={solveSudoku}>Solve it Magically!</button>
-    </div>
+    <>
+      {sudoku ? (
+        <>
+          <SudokuBoard sudoku={sudoku} onChange={handleChange} />
+          <button onClick={solveSudoku}>Solve it Magically!</button>
+        </>
+      ) : null}
+    </>
   );
 }
