@@ -1,0 +1,13 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+input[readonly] {
+  @apply text-gray-800;
+}
+
+/* input[readonly]:focus {
+  @apply border-blue-100;
+} */

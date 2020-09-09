@@ -6,7 +6,7 @@ export default function SudokuBoard(props) {
   const { sudoku, onChange } = props;
 
   return (
-    <div>
+    <div className="m-auto bg-green-200 p-2 flex no-wrap justify-items-start max-w-2xl">
       {/* {!sudoku.solveTime && <Timer start={sudoku.startTime} />} */}
       {sudoku.solveTime && <Result sudoku={sudoku} />}
       {sudoku.rows.map((row) => (

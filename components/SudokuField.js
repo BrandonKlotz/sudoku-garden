@@ -8,7 +8,7 @@ const SudokuField = (props) => {
 
   return (
     <input
-      className="field"
+      className="text-gray-300 text-center text-lg w-12 h-12 m-2 bg-green-100"
       value={field.value || ""}
       readOnly={field.readonly}
       onChange={handleChange}

@@ -25,9 +25,11 @@ export default function Home() {
 
   function solveSudoku(e) {
     let updatedSudoku = { ...sudoku };
+    console.log(sudoku);
     updatedSudoku.rows.forEach((row) =>
       row.cols.forEach((col) => {
         col.value = updatedSudoku.solution[col.row * 9 + col.col];
+        col.readonly = true;
       })
     );
     setSudoku(updatedSudoku);
